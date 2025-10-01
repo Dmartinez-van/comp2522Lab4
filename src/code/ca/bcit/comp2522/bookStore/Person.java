@@ -98,7 +98,7 @@ public class Person implements Printable,
         sb  = new StringBuilder();
 
         sb.append("Name = ");
-        sb.append(name.getFirstName();
+        sb.append(name.getFirstName());
         sb.append(" ");
         sb.append(name.getLastName());
         sb.append("\nBirthdate = ");
