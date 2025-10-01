@@ -1,3 +1,5 @@
+package ca.bcit.comp2522.bookStore;
+
 /**
  * Reverse interface (SAM)
  *

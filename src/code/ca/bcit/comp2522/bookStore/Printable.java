@@ -1,5 +1,7 @@
+package ca.bcit.comp2522.bookStore;
+
 /**
- * Printable interface (SAM)
+ * ca.bcit.comp2522.bookStore.Printable interface (SAM)
  *
  * @author David Martinez,
  *         Daniel Do
