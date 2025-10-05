@@ -30,7 +30,7 @@ public class Person implements Printable,
            final Date deathDate,
            final Name name)
     {
-        checkBirthVsDeath(birthDate, deathDate);
+//        checkBirthVsDeath(birthDate, deathDate);
 
         this.birthDate = birthDate;
         this.deathDate = deathDate;
@@ -45,9 +45,7 @@ public class Person implements Printable,
     Person(final Date birthDate,
            final Name name)
     {
-        this.birthDate = birthDate;
-        this.deathDate = DEFAULT_DEATH_DATE;
-        this.name      = name;
+        this(birthDate, DEFAULT_DEATH_DATE, name);
     }
 
     void checkBirthVsDeath(final Date birth,
@@ -92,25 +90,17 @@ public class Person implements Printable,
      * @return
      */
     @Override
-    public String display()
+    public void display()
     {
-        final StringBuilder sb;
-        sb  = new StringBuilder();
-
-        sb.append("Name = ");
-        sb.append(name.getFirstName());
-        sb.append(" ");
-        sb.append(name.getLastName());
-        sb.append("\nBirthdate = ");
-        sb.append(birthDate.toString());
+        name.display();
+        System.out.print("Birthdate: ");
+        birthDate.display();
 
         if (deathDate != null)
         {
-            sb.append("\nDeathdate = ");
-            sb.append(deathDate.toString());
+            System.out.print("Deathdate: ");
+            deathDate.display();
         }
-
-        return sb.toString();
     }
 
     /**

@@ -15,5 +15,5 @@ public interface Printable
      *
      * @return a string sentence
      */
-    String display();
+    void display();
 }

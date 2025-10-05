@@ -12,19 +12,19 @@ public class Name implements Printable
 {
     private static final int NAME_CHAR_LIMIT = 50;
 
-    private final String firstName;
-    private final String lastName;
+    private final String first;
+    private final String last;
 
-    public Name(String firstName, String lastName)
+    public Name(String first, String last)
     {
-        checkNameString(firstName);
-        checkNameString(lastName);
+        checkNameString(first);
+        checkNameString(last);
 
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.first = first;
+        this.last = last;
     }
 
-    void checkNameString(String name)
+    private void checkNameString(String name)
     {
         if(name == null || name.isBlank())
         {
@@ -43,9 +43,9 @@ public class Name implements Printable
      *
      * @return first name as string.
      */
-    public String getFirstName()
+    public String getFirst()
     {
-        return firstName;
+        return first;
     }
 
     /**
@@ -53,9 +53,9 @@ public class Name implements Printable
      *
      * @return last name as string.
      */
-    public String getLastName()
+    public String getLast()
     {
-        return lastName;
+        return last;
     }
 
     /**
@@ -65,17 +65,16 @@ public class Name implements Printable
      *         instance variables.
      */
     @Override
-    public String display()
+    public void display()
     {
         final StringBuilder sb;
         sb = new StringBuilder();
 
         sb.append("First name: ");
-        sb.append(firstName);
+        sb.append(first);
         sb.append("\nLast name: ");
-        sb.append(lastName);
-        sb.append("\n");
+        sb.append(last);
 
-        return sb.toString();
+        System.out.println(sb.toString());
     }
 }

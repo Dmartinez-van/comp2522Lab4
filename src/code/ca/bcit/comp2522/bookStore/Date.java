@@ -580,18 +580,17 @@ public final class Date implements Printable
     }
 
     @Override
-    public String display()
+    public void display()
     {
         final StringBuilder sb;
         sb = new StringBuilder();
 
-        sb.append("day = ");
+        sb.append(getMonthName());
+        sb.append(" ");
         sb.append(day);
-        sb.append("\nmonth = ");
-        sb.append(month);
-        sb.append("\nyear = ");
+        sb.append(" ");
         sb.append(year);
 
-        return sb.toString();
+        System.out.println(sb.toString());
     }
 }
