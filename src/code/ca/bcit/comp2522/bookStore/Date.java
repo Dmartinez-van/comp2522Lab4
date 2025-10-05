@@ -580,7 +580,7 @@ public final class Date implements Printable
     }
 
     @Override
-    public void display()
+    public String toString()
     {
         final StringBuilder sb;
         sb = new StringBuilder();
@@ -591,6 +591,14 @@ public final class Date implements Printable
         sb.append(" ");
         sb.append(year);
 
-        System.out.println(sb.toString());
+        return sb.toString();
     }
+
+    @Override
+    public void display()
+    {
+        System.out.println(this);
+    }
+
+
 }

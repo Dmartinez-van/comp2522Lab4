@@ -48,17 +48,22 @@ public class Author extends Person
     }
 
     @Override
-    public void display()
+    public String toString()
     {
-        super.display();
-
         final StringBuilder sb;
         sb = new StringBuilder();
 
-        sb.append("Genre: ");
+        sb.append(super.toString());
+        sb.append("\nGenre: ");
         sb.append(genre);
 
-        System.out.println(sb.toString());
+        return sb.toString();
+    }
+
+    @Override
+    public void display()
+    {
+        System.out.println(this);
     }
 
 }

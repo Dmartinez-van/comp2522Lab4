@@ -58,14 +58,8 @@ public class Name implements Printable
         return last;
     }
 
-    /**
-     * Prints all instance variables of self and parent class.
-     *
-     * @return a string sentence with all self and parent class
-     *         instance variables.
-     */
     @Override
-    public void display()
+    public String toString()
     {
         final StringBuilder sb;
         sb = new StringBuilder();
@@ -75,6 +69,20 @@ public class Name implements Printable
         sb.append("\nLast name: ");
         sb.append(last);
 
-        System.out.println(sb.toString());
+        return sb.toString();
     }
+
+    /**
+     * Prints all instance variables of self and parent class.
+     *
+     * @return a string sentence with all self and parent class
+     *         instance variables.
+     */
+    @Override
+    public void display()
+    {
+        System.out.println(this);
+    }
+
+
 }

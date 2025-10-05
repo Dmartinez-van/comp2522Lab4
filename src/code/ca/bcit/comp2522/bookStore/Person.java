@@ -30,8 +30,6 @@ public class Person implements Printable,
            final Date deathDate,
            final Name name)
     {
-//        checkBirthVsDeath(birthDate, deathDate);
-
         this.birthDate = birthDate;
         this.deathDate = deathDate;
         this.name      = name;
@@ -48,12 +46,12 @@ public class Person implements Printable,
         this(birthDate, DEFAULT_DEATH_DATE, name);
     }
 
-    void checkBirthVsDeath(final Date birth,
-                           final Date death)
-    {
-        //TODO: Compare birth and death dates. Throw new exception if birth is after death.
-        //TODO: Might be worth making a compareTo method in Date class then using here?
-    }
+//    void checkBirthVsDeath(final Date birth,
+//                           final Date death)
+//    {
+//        //TODO: Compare birth and death dates. Throw new exception if birth is after death.
+//        //TODO: Might be worth making a compareTo method in Date class then using here?
+//    }
 
     /**
      * Get birthdate.
@@ -85,22 +83,21 @@ public class Person implements Printable,
         return name;
     }
 
-    /**
-     * JAVA DOC HERE
-     * @return
-     */
     @Override
-    public void display()
+    public String toString()
     {
-        name.display();
-        System.out.print("Birthdate: ");
-        birthDate.display();
+        StringBuilder sb;
+        sb = new StringBuilder();
 
+        sb.append(name);
+        sb.append("\nBirthdate: ");
+        sb.append(birthDate);
         if (deathDate != null)
         {
-            System.out.print("Deathdate: ");
-            deathDate.display();
+            sb.append("\nDeath Date: ");
+            sb.append(deathDate);
         }
+        return sb.toString();
     }
 
     /**
@@ -108,9 +105,22 @@ public class Person implements Printable,
      * @return
      */
     @Override
-    public String backward()
+    public void display()
     {
-        return "";
+        System.out.println(this);
+    }
+
+    /**
+     * JAVA DOC HERE
+     * @return
+     */
+    @Override
+    public void backward()
+    {
+        final StringBuilder sb;
+        sb = new StringBuilder();
+
+        System.out.println(sb.reverse().toString());
     }
 
     /**

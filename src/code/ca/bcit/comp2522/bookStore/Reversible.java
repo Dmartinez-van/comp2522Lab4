@@ -14,5 +14,5 @@ public interface Reversible
      *
      * @return a reversed string
      */
-    String backward();
+    void backward();
 }
