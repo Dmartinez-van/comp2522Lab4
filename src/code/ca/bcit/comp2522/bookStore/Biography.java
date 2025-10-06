@@ -44,7 +44,7 @@ public class Biography extends Book
         final StringBuilder sb;
         sb = new StringBuilder();
         sb.append(super.toString());
-        sb.append("\nSubject: ");
+        sb.append("\nSubject ");
         sb.append(subject);
 
         return sb.toString();
