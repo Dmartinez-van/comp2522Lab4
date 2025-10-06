@@ -135,6 +135,10 @@ public final class Date implements Printable
         }
     }
 
+    public static int getCurrentYear() {
+        return CURRENT_YEAR;
+    }
+
     /**
      * Checks if the provided year is within the valid range.
      * The valid range is between {@value MINIMUM_YEAR} and {@value CURRENT_YEAR}, inclusive.

@@ -52,7 +52,7 @@ public class Author extends Person
     {
         final StringBuilder sb;
         sb = new StringBuilder();
-
+        sb.append("Author ");
         sb.append(super.toString());
         sb.append("\nGenre: ");
         sb.append(genre);
