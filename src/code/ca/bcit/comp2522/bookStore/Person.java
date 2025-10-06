@@ -83,6 +83,13 @@ public class Person implements Printable,
         return name;
     }
 
+    //TODO Implement equals method
+    @Override
+    public boolean equals(final Object o)
+    {
+        return true;
+    }
+
     @Override
     public String toString()
     {

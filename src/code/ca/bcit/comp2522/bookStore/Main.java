@@ -40,6 +40,7 @@ public class Main
 
         exampleAuthor.display();
         exampleAuthor.backward();
+        System.out.println();
 
         birthDay = 15;
         birthMonth = 3;
@@ -54,5 +55,6 @@ public class Main
         exampleBook = new Book(bookTitle, yearPublished, exampleAuthor);
 
         System.out.println(exampleBook);
+        exampleBook.backward();
     }
 }
