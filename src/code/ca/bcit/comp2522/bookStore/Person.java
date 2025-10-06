@@ -89,6 +89,7 @@ public class Person implements Printable,
         StringBuilder sb;
         sb = new StringBuilder();
 
+        sb.append("Name: ");
         sb.append(name);
         sb.append("\nBirthdate: ");
         sb.append(birthDate);
@@ -120,7 +121,10 @@ public class Person implements Printable,
         final StringBuilder sb;
         sb = new StringBuilder();
 
-        System.out.println(sb.reverse().toString());
+        sb.append(name);
+        sb.reverse();
+
+        System.out.println(sb.toString());
     }
 
     /**

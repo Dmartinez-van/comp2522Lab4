@@ -29,5 +29,6 @@ public static void main(final String[] args)
     exampleAuthor = new Author(birthDate, authorName, genre);
 
     exampleAuthor.display();
+    exampleAuthor.backward();
 }
 }

@@ -64,9 +64,8 @@ public class Name implements Printable
         final StringBuilder sb;
         sb = new StringBuilder();
 
-        sb.append("First name: ");
         sb.append(first);
-        sb.append("\nLast name: ");
+        sb.append(" ");
         sb.append(last);
 
         return sb.toString();
