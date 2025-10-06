@@ -128,12 +128,40 @@ public class Person implements Printable,
     }
 
     /**
-     * JAVA DOC HERE
-     * @return
+     * compareTo implementation that compares two People based on their {@link #birthDate}.
+     *
+     * @param that the {@link Person} to be compared to this Person.
+     * @return 0 if the two Persons have the same birth date,
+     *         a negative integer if this Person was born before that Person,
+     *         and a positive integer if this Person was born after that Person.
      */
     @Override
-    public int compareTo(Person o)
+    public int compareTo(final Person that)
     {
-        return 0;
+        final int yearComparison;
+        final int monthComparison;
+        final int dayComparison;
+
+        yearComparison = Integer.compare(this.birthDate.getYear(), that.birthDate.getYear());
+
+        if (yearComparison != 0)
+        {
+            return yearComparison;
+        }
+        else
+        {
+            monthComparison = Integer.compare(this.birthDate.getMonth(), that.birthDate.getMonth());
+
+            if (monthComparison != 0)
+            {
+                return monthComparison;
+            }
+            else
+            {
+                dayComparison = Integer.compare(this.birthDate.getDay(), that.birthDate.getDay());
+
+                return dayComparison;
+            }
+        }
     }
 }
