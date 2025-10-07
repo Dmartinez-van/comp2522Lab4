@@ -1,8 +1,8 @@
 package ca.bcit.comp2522.bookStore;
 
-//TODO ADD JAVADOC COMMENT
 /**
- * <>ADD JAVADOC COMMENT</>
+ * Runner class for comp2522 lab 4
+ * Tests various classes and their methods for correctness
  *
  * @author David Martinez,
  *         Daniel Do
@@ -26,6 +26,7 @@ public class Main
         final int birthMonth;
         final int birthYear;
         final Date authorBirthDate;
+
         final Name authorName2;
         final String authorGenre;
         final Author exampleAuthor2;
@@ -38,9 +39,13 @@ public class Main
         genre = "Science Fiction";
         exampleAuthor = new Author(birthDate, authorName, genre);
 
+        System.out.println("____Author____");
+        System.out.println("_______ DISPLAY ______");
         exampleAuthor.display();
+        System.out.println("___END DISPLAY ______");
         exampleAuthor.backward();
         System.out.println();
+        birthDate.display();
 
         birthDay = 15;
         birthMonth = 3;
@@ -54,6 +59,7 @@ public class Main
         yearPublished = 2024;
         exampleBook = new Book(bookTitle, yearPublished, exampleAuthor);
 
+        System.out.println("_____Book_____");
         System.out.println(exampleBook);
         exampleBook.backward();
     }

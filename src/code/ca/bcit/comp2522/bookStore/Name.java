@@ -15,7 +15,14 @@ public class Name implements Printable
     private final String first;
     private final String last;
 
-    public Name(String first, String last)
+    /**
+     * Full constructor.
+     *
+     * @param first a first name
+     * @param last a last name
+     */
+    public Name(final String first,
+                final String last)
     {
         checkNameString(first);
         checkNameString(last);
@@ -24,7 +31,7 @@ public class Name implements Printable
         this.last = last;
     }
 
-    private void checkNameString(String name)
+    private void checkNameString(final String name)
     {
         if(name == null || name.isBlank())
         {
@@ -58,6 +65,11 @@ public class Name implements Printable
         return last;
     }
 
+    /**
+     * Returns a string of {@link #first} and {@link #last} names
+     *
+     * @return a string
+     */
     @Override
     public String toString()
     {
@@ -73,15 +85,10 @@ public class Name implements Printable
 
     /**
      * Prints all instance variables of self and parent class.
-     *
-     * @return a string sentence with all self and parent class
-     *         instance variables.
      */
     @Override
     public void display()
     {
         System.out.println(this);
     }
-
-
 }

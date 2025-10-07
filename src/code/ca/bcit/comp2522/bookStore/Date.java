@@ -135,6 +135,11 @@ public final class Date implements Printable
         }
     }
 
+    /**
+     * Get the {@link #CURRENT_YEAR}
+     *
+     * @return {@link #CURRENT_YEAR} as int.
+     */
     public static int getCurrentYear() {
         return CURRENT_YEAR;
     }
@@ -598,6 +603,9 @@ public final class Date implements Printable
         return sb.toString();
     }
 
+    /**
+     * Prints to screen all instance data
+     */
     @Override
     public void display()
     {

@@ -6,7 +6,7 @@ package ca.bcit.comp2522.bookStore;
  * Implements Comparable, Printable, Reversible
  *
  * @author David Martinez,
- * Daniel Do
+ *         Daniel Do
  * @version 1.0
  */
 public class Person implements Printable,
@@ -37,6 +37,7 @@ public class Person implements Printable,
 
     /**
      * Partial Constructor, with a {@link #DEFAULT_DEATH_DATE}.
+     *
      * @param birthDate the date of birth.
      * @param name the Person's first and last name.
      */
@@ -45,13 +46,6 @@ public class Person implements Printable,
     {
         this(birthDate, DEFAULT_DEATH_DATE, name);
     }
-
-//    void checkBirthVsDeath(final Date birth,
-//                           final Date death)
-//    {
-//        //TODO: Compare birth and death dates. Throw new exception if birth is after death.
-//        //TODO: Might be worth making a compareTo method in Date class then using here?
-//    }
 
     /**
      * Get birthdate.
@@ -83,34 +77,28 @@ public class Person implements Printable,
         return name;
     }
 
-    //TODO Implement equals method
-    @Override
-    public boolean equals(final Object o)
-    {
-        return true;
-    }
-
     @Override
     public String toString()
     {
-        StringBuilder sb;
+        final StringBuilder sb;
         sb = new StringBuilder();
 
         sb.append("Name: ");
         sb.append(name);
         sb.append("\nBirthdate: ");
         sb.append(birthDate);
+
         if (deathDate != null)
         {
             sb.append("\nDeath Date: ");
             sb.append(deathDate);
         }
+
         return sb.toString();
     }
 
     /**
-     * JAVA DOC HERE
-     * @return
+     * Prints all instance data to screen
      */
     @Override
     public void display()
@@ -119,8 +107,7 @@ public class Person implements Printable,
     }
 
     /**
-     * JAVA DOC HERE
-     * @return
+     * Prints to screen a Person's reversed name
      */
     @Override
     public void backward()
@@ -138,7 +125,7 @@ public class Person implements Printable,
      * compareTo implementation that compares two People based on their {@link #birthDate}.
      *
      * @param that the {@link Person} to be compared to this Person.
-     * @return 0 if the two Persons have the same birth date,
+     * @return 0 if the two Persons have the same birthdate,
      *         a negative integer if this Person was born before that Person,
      *         and a positive integer if this Person was born after that Person.
      */
@@ -149,7 +136,8 @@ public class Person implements Printable,
         final int monthComparison;
         final int dayComparison;
 
-        yearComparison = Integer.compare(this.birthDate.getYear(), that.birthDate.getYear());
+        yearComparison = Integer.compare(this.birthDate.getYear(),
+                                         that.birthDate.getYear());
 
         if (yearComparison != 0)
         {
@@ -157,7 +145,8 @@ public class Person implements Printable,
         }
         else
         {
-            monthComparison = Integer.compare(this.birthDate.getMonth(), that.birthDate.getMonth());
+            monthComparison = Integer.compare(this.birthDate.getMonth(),
+                                              that.birthDate.getMonth());
 
             if (monthComparison != 0)
             {
@@ -165,7 +154,8 @@ public class Person implements Printable,
             }
             else
             {
-                dayComparison = Integer.compare(this.birthDate.getDay(), that.birthDate.getDay());
+                dayComparison = Integer.compare(this.birthDate.getDay(),
+                                                that.birthDate.getDay());
 
                 return dayComparison;
             }
