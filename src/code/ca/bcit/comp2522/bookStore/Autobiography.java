@@ -1,8 +1,9 @@
 package ca.bcit.comp2522.bookStore;
 
-//TODO ADD JAVADOC COMMENT
 /**
- * <>ADD JAVADOC COMMENT</>
+ * An Autobiography extends {@link Biography}.
+ * The difference is that an Autobiography is written
+ * by the subject.
  *
  * @author David Martinez,
  *         Daniel Do
@@ -11,6 +12,13 @@ package ca.bcit.comp2522.bookStore;
 public class Autobiography extends Biography
                            implements Printable
 {
+    /**
+     * Full constructor.
+     *
+     * @param title the title
+     * @param yearPublished the year published
+     * @param author the author and subject
+     */
     public Autobiography(final String title,
                          final int yearPublished,
                          final Author author)
@@ -18,16 +26,25 @@ public class Autobiography extends Biography
         super(title, yearPublished, author, author);
     }
 
+    /**
+     * Returns a string of instance data
+     *
+     * @return a string of instance data
+     */
     @Override
     public String toString()
     {
         final StringBuilder sb;
         sb = new StringBuilder();
+
         sb.append(super.toString());
 
         return sb.toString();
     }
 
+    /**
+     * Prints to screen instance data
+     */
     @Override
     public void display()
     {

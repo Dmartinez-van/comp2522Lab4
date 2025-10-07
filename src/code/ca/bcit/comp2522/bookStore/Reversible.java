@@ -11,8 +11,6 @@ public interface Reversible
 {
     /**
      * Prints a given string in reverse.
-     *
-     * @return a reversed string
      */
     void backward();
 }

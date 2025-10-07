@@ -1,8 +1,7 @@
 package ca.bcit.comp2522.bookStore;
 
-//TODO ADD JAVADOC COMMENT
 /**
- * <>ADD JAVADOC COMMENT</>
+ * Book is represented by a title, yearPublished, and an author
  *
  * @author David Martinez,
  *         Daniel Do
@@ -12,18 +11,28 @@ public class Book implements Printable,
                              Reversible,
                              Comparable<Book>
 {
-    public static final int TITLE_CHAR_LIMIT = 100;
-    public static final int YEAR_LOWER_LIMIT = 1;
-    public static final int YEAR_UPPER_LIMIT = Date.getCurrentYear();
+    private static final int TITLE_CHAR_LIMIT = 100;
+    private static final int YEAR_LOWER_LIMIT = 1;
+    private static final int YEAR_UPPER_LIMIT = Date.getCurrentYear();
 
     private final String title;
-    private final int yearPublished;
     private final Author author;
+    private final int    yearPublished;
 
+    /**
+     * Full constructor.
+     *
+     * @param title a title
+     * @param yearPublished the year published
+     * @param author the author
+     */
     public Book (final String title,
                  final int yearPublished,
                  final Author author)
     {
+        checkTitleString(title);
+        checkYearPublished(yearPublished);
+
         this.title = title;
         this.yearPublished = yearPublished;
         this.author = author;
@@ -52,11 +61,17 @@ public class Book implements Printable,
         }
     }
 
+    /**
+     * Returns instance data as string
+     *
+     * @return instance data as string
+     */
     @Override
     public String toString()
     {
         final StringBuilder sb;
         sb = new StringBuilder();
+
         sb.append("Title: ");
         sb.append(title);
         sb.append("\nYear Published: ");
@@ -67,26 +82,43 @@ public class Book implements Printable,
         return sb.toString();
     }
 
+    /**
+     * Prints to screen instance data
+     */
     @Override
     public void display()
     {
         System.out.println(this);
     }
 
+    /**
+     * Prints to screen instance's {@link #title} reversed
+     */
     @Override
     public void backward()
     {
-        StringBuilder sb;
+        final StringBuilder sb;
         sb = new StringBuilder();
+
         sb.append(title);
         sb.reverse();
 
         System.out.println(sb.toString());
     }
 
+    /**
+     * Compares 2 {@link Book} objects.
+     * Compares objects based on {@link #yearPublished}
+     * Older books are considered 'larger'
+     *
+     * @param that another {@link Book} to compare against
+     * @return 0 if objects are published in same year
+     *         positive int if this object is older (published earlier)
+     *         negative int if this object is newer (published more recently)
+     */
     @Override
-    public int compareTo(Book that)
+    public int compareTo(final Book that)
     {
-        return Integer.compare(this.yearPublished, that.yearPublished);
+        return that.yearPublished - this.yearPublished;
     }
 }

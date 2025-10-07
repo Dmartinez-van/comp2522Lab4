@@ -1,7 +1,9 @@
 package ca.bcit.comp2522.bookStore;
 
 /**
- * ca.bcit.comp2522.bookStore.Printable interface (SAM)
+ * SAM Interface
+ * Asks implementors to implement {@link #display()} which
+ * prints to screen all instance data for the calling object.
  *
  * @author David Martinez,
  *         Daniel Do
@@ -12,8 +14,6 @@ public interface Printable
     /**
      * Prints every instance variable (including those in parent classes)
      * in a sentence.
-     *
-     * @return a string sentence
      */
     void display();
 }
