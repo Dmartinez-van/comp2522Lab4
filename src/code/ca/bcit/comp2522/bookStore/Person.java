@@ -143,22 +143,19 @@ public class Person implements Printable,
         {
             return yearComparison;
         }
-        else
+
+        monthComparison = Integer.compare(this.birthDate.getMonth(),
+                                          that.birthDate.getMonth());
+
+        if (monthComparison != 0)
         {
-            monthComparison = Integer.compare(this.birthDate.getMonth(),
-                                              that.birthDate.getMonth());
-
-            if (monthComparison != 0)
-            {
-                return monthComparison;
-            }
-            else
-            {
-                dayComparison = Integer.compare(this.birthDate.getDay(),
-                                                that.birthDate.getDay());
-
-                return dayComparison;
-            }
+            return monthComparison;
         }
+
+        dayComparison = Integer.compare(this.birthDate.getDay(),
+                                        that.birthDate.getDay());
+        return dayComparison;
+
+        // objects are equal
     }
 }

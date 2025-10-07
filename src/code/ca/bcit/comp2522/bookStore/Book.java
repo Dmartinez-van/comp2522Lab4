@@ -11,9 +11,9 @@ public class Book implements Printable,
                              Reversible,
                              Comparable<Book>
 {
-    private static final int TITLE_CHAR_LIMIT = 100;
-    private static final int YEAR_LOWER_LIMIT = 1;
-    private static final int YEAR_UPPER_LIMIT = Date.getCurrentYear();
+    private static final int TITLE_MAX_CHAR_LIMIT = 100;
+    private static final int YEAR_LOWER_LIMIT     = 1;
+    private static final int YEAR_UPPER_LIMIT     = Date.getCurrentYear();
 
     private final String title;
     private final Author author;
@@ -26,9 +26,9 @@ public class Book implements Printable,
      * @param yearPublished the year published
      * @param author the author
      */
-    public Book (final String title,
-                 final int yearPublished,
-                 final Author author)
+    public Book(final String title,
+                final int yearPublished,
+                final Author author)
     {
         checkTitleString(title);
         checkYearPublished(yearPublished);
@@ -40,14 +40,14 @@ public class Book implements Printable,
 
     private static void checkTitleString(final String title)
     {
-        if(title == null || title.isBlank())
+        if (title == null || title.isBlank())
         {
             throw new IllegalArgumentException("Title cannot be null or blank");
         }
-        if (title.length() > TITLE_CHAR_LIMIT)
+        if (title.length() > TITLE_MAX_CHAR_LIMIT)
         {
             throw new IllegalArgumentException("Title cannot be longer than " +
-                                                TITLE_CHAR_LIMIT);
+                    TITLE_MAX_CHAR_LIMIT);
         }
     }
 

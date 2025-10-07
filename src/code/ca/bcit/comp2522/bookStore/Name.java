@@ -31,6 +31,10 @@ public class Name implements Printable
         this.last = last;
     }
 
+    /*
+    Checks for null and blankness, invalid if either is true.
+    Throws new IllegalArgumentException
+     */
     private void checkNameString(final String name)
     {
         if(name == null || name.isBlank())
@@ -68,7 +72,7 @@ public class Name implements Printable
     /**
      * Returns a string of {@link #first} and {@link #last} names
      *
-     * @return a string
+     * @return a string of fire and last names
      */
     @Override
     public String toString()

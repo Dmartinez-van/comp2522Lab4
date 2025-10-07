@@ -121,9 +121,8 @@ public final class Date implements Printable
         this.year = year;
     }
 
-    /**
+    /*
      * Checks if a number is less than or equal to zero.
-     *
      * @param number the number to check
      * @throws IllegalArgumentException if the number is less than or equal to zero
      */
@@ -135,23 +134,13 @@ public final class Date implements Printable
         }
     }
 
-    /**
-     * Get the {@link #CURRENT_YEAR}
-     *
-     * @return {@link #CURRENT_YEAR} as int.
-     */
-    public static int getCurrentYear() {
-        return CURRENT_YEAR;
-    }
-
-    /**
+    /*
      * Checks if the provided year is within the valid range.
      * The valid range is between {@value MINIMUM_YEAR} and {@value CURRENT_YEAR}, inclusive.
-     *
      * @param year the year to validate
      * @throws IllegalArgumentException if year is not between the bounds
      */
-    public static void checkYear(final int year)
+    private static void checkYear(final int year)
     {
         if (year <= MINIMUM_YEAR || year > CURRENT_YEAR)
         {
@@ -160,7 +149,7 @@ public final class Date implements Printable
         }
     }
 
-    /**
+    /*
      * Checks if the provided month is within the valid range.
      * The valid range is between {@link #JANUARY} and
      * {@link #DECEMBER}, inclusive.
@@ -169,7 +158,7 @@ public final class Date implements Printable
      * @throws IllegalArgumentException if month is not between
      *                                  {@value JANUARY} and {@value DECEMBER}
      */
-    public static void checkMonth(final int month)
+    private static void checkMonth(final int month)
     {
         if (month < JANUARY || month > DECEMBER)
         {
@@ -178,7 +167,7 @@ public final class Date implements Printable
         }
     }
 
-    /**
+    /*
      * Checks if the provided day is within the valid range for the
      * given month and year. The valid range is between
      * {@value MINIMUM_DAY_IN_MONTH} and the maximum day for the specified
@@ -211,6 +200,22 @@ public final class Date implements Printable
         }
     }
 
+    /**
+     * Get the {@link #CURRENT_YEAR}
+     *
+     * @return {@link #CURRENT_YEAR} as int.
+     */
+    public static int getCurrentYear() {
+        return CURRENT_YEAR;
+    }
+
+    /**
+     * Getter for days in a month
+     *
+     * @param month the month (as int) to get days for
+     * @param year the specific year to check in
+     * @return
+     */
     private static int getDaysInMonth(int month, int year)
     {
         if (month == JANUARY)
