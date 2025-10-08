@@ -24,7 +24,7 @@ public class Person implements Printable,
      *
      * @param birthDate the date of birth.
      * @param deathDate the date of death.
-     * @param name the Person's first and last name.
+     * @param name      the Person's first and last name.
      */
     Person(final Date birthDate,
            final Date deathDate,
@@ -39,7 +39,7 @@ public class Person implements Printable,
      * Partial Constructor, with a {@link #DEFAULT_DEATH_DATE}.
      *
      * @param birthDate the date of birth.
-     * @param name the Person's first and last name.
+     * @param name      the Person's first and last name.
      */
     Person(final Date birthDate,
            final Name name)
@@ -48,9 +48,9 @@ public class Person implements Printable,
     }
 
     /**
-     * Get birthdate.
+     * Getter for birthdate.
      *
-     * @return birthdate
+     * @return object's birthdate
      */
     public Date getBirthDate()
     {
@@ -58,9 +58,9 @@ public class Person implements Printable,
     }
 
     /**
-     * Get deathdate
+     * Getter for deathdate
      *
-     * @return deathdate
+     * @return object's deathdate
      */
     public Date getDeathDate()
     {
@@ -68,15 +68,20 @@ public class Person implements Printable,
     }
 
     /**
-     * Get name
+     * Getter for name
      *
-     * @return name
+     * @return object's name
      */
     public Name getName()
     {
         return name;
     }
 
+    /**
+     * Returns object's instance data as string
+     *
+     * @return object's instance data as string
+     */
     @Override
     public String toString()
     {
@@ -139,6 +144,7 @@ public class Person implements Printable,
         yearComparison = Integer.compare(this.birthDate.getYear(),
                                          that.birthDate.getYear());
 
+        // If objects differ on year, return the result
         if (yearComparison != 0)
         {
             return yearComparison;
@@ -147,6 +153,7 @@ public class Person implements Printable,
         monthComparison = Integer.compare(this.birthDate.getMonth(),
                                           that.birthDate.getMonth());
 
+        // If objects differ on month, return the result
         if (monthComparison != 0)
         {
             return monthComparison;
@@ -154,8 +161,11 @@ public class Person implements Printable,
 
         dayComparison = Integer.compare(this.birthDate.getDay(),
                                         that.birthDate.getDay());
-        return dayComparison;
 
-        // objects are equal
+        /*
+        Finally, return the result of the comparison on day.
+        If objects are truly equal, return will be 0.
+        */
+        return dayComparison;
     }
 }

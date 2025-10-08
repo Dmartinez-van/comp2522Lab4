@@ -10,7 +10,7 @@ package ca.bcit.comp2522.bookStore;
  */
 public class Name implements Printable
 {
-    private static final int NAME_CHAR_LIMIT = 50;
+    private static final int NAME_MAX_CHAR_LIMIT = 50;
 
     private final String first;
     private final String last;
@@ -42,15 +42,15 @@ public class Name implements Printable
             throw new IllegalArgumentException("Name cannot be null or blank");
         }
 
-        if (name.length() > NAME_CHAR_LIMIT)
+        if (name.length() > NAME_MAX_CHAR_LIMIT)
         {
             throw new IllegalArgumentException("Name cannot be longer than " +
-                                                NAME_CHAR_LIMIT);
+                    NAME_MAX_CHAR_LIMIT);
         }
     }
 
     /**
-     * Get first name.
+     * Getter for first name.
      *
      * @return first name as string.
      */
@@ -60,7 +60,7 @@ public class Name implements Printable
     }
 
     /**
-     * Get last name.
+     * Getter for last name.
      *
      * @return last name as string.
      */

@@ -62,7 +62,7 @@ public class Biography extends Book
     @Override
     public int hashCode()
     {
-        return this.subject.hashCode();
+        return subject.hashCode();
     }
 
     /**
