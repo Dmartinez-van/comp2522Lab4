@@ -62,6 +62,16 @@ public class Book implements Printable,
     }
 
     /**
+     * Getter for title
+     *
+     * @return title as string
+     */
+    public String getTitle()
+    {
+        return title;
+    }
+
+    /**
      * Returns instance data as string
      *
      * @return instance data as string
@@ -120,5 +130,26 @@ public class Book implements Printable,
     public int compareTo(final Book that)
     {
         return that.yearPublished - this.yearPublished;
+    }
+
+    public void printOlderBook(final Book otherBook)
+    {
+        final int compare;
+        compare = this.compareTo(otherBook);
+
+        if (compare == 0)
+        {
+            System.out.println("Books are published in same year");
+        }
+
+        else if (compare < 0)
+        {
+            System.out.printf("%s is older \n", otherBook.getTitle());
+        }
+
+        else
+        {
+            System.out.printf("%s is older \n", this.getTitle());
+        }
     }
 }

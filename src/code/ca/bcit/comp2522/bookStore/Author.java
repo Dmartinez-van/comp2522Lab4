@@ -103,4 +103,28 @@ public class Author extends Person
         System.out.println(this);
     }
 
+    /**
+     * Prints to screen which author is older, or if equal in age (years).
+     * @param otherAuthor another author
+     */
+    public void printOlderAuthor(final Author otherAuthor)
+    {
+        final int compare;
+        compare = this.compareTo(otherAuthor);
+
+        if (compare == 0)
+        {
+            System.out.println("Both authors are same age in years");
+        }
+
+        else if (compare > 0)
+        {
+            System.out.printf("%s is older \n", this.getName());
+        }
+
+        else
+        {
+            System.out.printf("%s is older \n", otherAuthor.getName());
+        }
+    }
 }

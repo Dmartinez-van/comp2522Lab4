@@ -18,49 +18,102 @@ public class Main
      */
     public static void main(final String[] args)
     {
-        final Date birthDate;
-        final Name authorName;
-        final String genre;
-        final Author exampleAuthor;
-        final int birthDay;
-        final int birthMonth;
-        final int birthYear;
-        final Date authorBirthDate;
+        // Create 5 of the Greatest Books
+        // ---- Start ----
+        final Book book1;
+        final Book book2;
+        final Book book3;
+        final Book book4;
+        final Book book5;
 
-        final Name authorName2;
-        final String authorGenre;
-        final Author exampleAuthor2;
-        final String bookTitle;
-        final int yearPublished;
-        final Book exampleBook;
+        final Author author1Book;
+        final Author author2Book;
+        final Author author3Book;
+        final Author author4Book;
+        final Author author5Book;
 
-        birthDate = new Date(15, 3, 1990);
-        authorName = new Name("John", "Smith");
-        genre = "Science Fiction";
-        exampleAuthor = new Author(birthDate, authorName, genre);
+        final Date author1DOB;
+        final Date author2DOB;
+        final Date author3DOB;
+        final Date author4DOB;
+        final Date author5DOB;
 
-        System.out.println("____Author____");
-        System.out.println("_______ DISPLAY ______");
-        exampleAuthor.display();
-        System.out.println("___END DISPLAY ______");
-        exampleAuthor.backward();
+        final Date author1DOD;
+        final Date author2DOD;
+        final Date author3DOD;
+        final Date author4DOD;
+        final Date author5DOD;
+
+        // George Orwell
+        author1DOB = new Date(25, 6, 1903);  // June 25, 1903
+        author1DOD = new Date(21, 1, 1950);  // January 21, 1950
+
+        // Harper Lee
+        author2DOB = new Date(28, 4, 1926);  // April 28, 1926
+        author2DOD = new Date(19, 2, 2016);  // February 19, 2016
+
+        // Jane Austen
+//        author3DOB = new Date(16, 12, 1775); // December 16, 1775
+//        author3DOD = new Date(18, 7, 1817);  // July 18, 1817
+
+        // F. Scott Fitzgerald
+        author4DOB = new Date(24, 9, 1896);  // September 24, 1896
+        author4DOD = new Date(21, 12, 1940); // December 21, 1940
+
+        // Herman Melville
+        author5DOB = new Date(1, 8, 1819);   // August 1, 1819
+        author5DOD = new Date(28, 9, 1891);  // September 28, 1891
+
+        author1Book = new Author(author1DOB, author1DOD, new Name("George",  "Orwell"), "Sci-fi");
+        author2Book = new Author(author2DOB, author2DOD, new Name("Harper", "Lee"), "Literary Fiction");
+//        author3Book = new Author(author3DOB, author3DOD, new Name("Jane", "Austen"), "Romance");
+        author4Book = new Author(author4DOB, author4DOD, new Name("F. Scott", "Fitzgerald"), "Literary Fiction");
+        author5Book = new Author(author5DOB, author5DOD, new Name("Herman", "Melville"), "Adventure");
+
+        Date book1Publication = new Date(1, 1, 1949);  // 1984
+        Date book2Publication = new Date(1, 1, 1960);  // To Kill a Mockingbird
+//        Date book3Publication = new Date(1, 1, 1813);  // Pride and Prejudice
+        Date book4Publication = new Date(1, 1, 1925);  // The Great Gatsby
+        Date book5Publication = new Date(1, 1, 1851);  // Moby-Dick
+
+        // George Orwell
+        book1 = new Book("1984", 1949, author1Book);
+
+        // Harper Lee
+        book2 = new Book("To Kill a Mockingbird", 1960, author2Book);
+
+        // Jane Austen
+//        book3 = new Book("Pride and Prejudice", 1813, author3Book);
+
+        // F. Scott Fitzgerald
+        book4 = new Book("The Great Gatsby", 1925, author4Book);
+
+        // Herman Melville
+        book5 = new Book("Moby-Dick", 1851, author5Book);
+
+        // COMPARE BOOKS BY PUBLICATION YEAR
+        System.out.println("COMPARING BY PUBLICATION YEAR...");
+        System.out.println("Book 1: '" + book1.getTitle() + "' from " + book1Publication);
+        System.out.println("Book 2: '" + book2.getTitle() + "' from " + book2Publication);
+        System.out.print("Compare Book 2 and Book 1 : ");
+        book2.printOlderBook(book1);
+        System.out.println("Book 4: '" + book4.getTitle() + "' from " + book4Publication);
+        System.out.print("Compare Book 2 and Book 4 : ");
+        book2.printOlderBook(book4);
+
         System.out.println();
-        birthDate.display();
 
-        birthDay = 15;
-        birthMonth = 3;
-        birthYear = 1990;
-        authorBirthDate = new Date(birthDay, birthMonth, birthYear);
-        authorName2 = new Name("John", "Smith");
-        authorGenre = "Science Fiction";
-        exampleAuthor2 = new Author(authorBirthDate, authorName, authorGenre);
+        // COMPARE BOOKS BY AUTHORS BY DOB
+        System.out.println("COMPARING BY DOB...");
+        System.out.println("George Orwell compared to Herman Melville (age in years)");
+        author1Book.printOlderAuthor(author5Book);
 
-        bookTitle = "Journey to Mars";
-        yearPublished = 2024;
-        exampleBook = new Book(bookTitle, yearPublished, exampleAuthor);
+        // ---- End of Book ----
 
-        System.out.println("_____Book_____");
-        System.out.println(exampleBook);
-        exampleBook.backward();
+        // ---- Start Biographies ----
+
+
+
+
     }
 }
