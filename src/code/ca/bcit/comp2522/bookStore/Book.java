@@ -33,11 +33,16 @@ public class Book implements Printable,
         checkTitleString(title);
         checkYearPublished(yearPublished);
 
-        this.title = title;
+        this.title         = title;
+        this.author        = author;
         this.yearPublished = yearPublished;
-        this.author = author;
     }
 
+    /*
+    Checks for null or blank title string. Also checks for length greater
+    than a max character limit. Invalid if any expression is true.
+    Throws new IllegalArgumentException
+     */
     private static void checkTitleString(final String title)
     {
         if (title == null || title.isBlank())
@@ -51,6 +56,11 @@ public class Book implements Printable,
         }
     }
 
+    /*
+    Checks for valid year published, within a lower and upper year boundary.
+    Invalid if year falls outside range.
+    Throws new IllegalArgumentException
+     */
     private static void checkYearPublished(final int yearPublished)
     {
         if (yearPublished < YEAR_LOWER_LIMIT || yearPublished > YEAR_UPPER_LIMIT)
@@ -132,6 +142,13 @@ public class Book implements Printable,
         return that.yearPublished - this.yearPublished;
     }
 
+    /**
+     * Prints to screen if the title of an older book, either this or another
+     * book's title.
+     *
+     * @param otherBook another book to compare to this book with. Compares on
+     *                  the publishing year.
+     */
     public void printOlderBook(final Book otherBook)
     {
         final int compare;
