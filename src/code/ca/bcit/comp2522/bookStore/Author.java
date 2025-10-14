@@ -17,7 +17,8 @@ package ca.bcit.comp2522.bookStore;
 public class Author extends Person
                     implements Printable
 {
-    private static final int GENRE_MAX_CHAR_LIMIT = 30;
+    private static final int GENRE_MAX_CHAR_LIMIT = 300;
+    private static final int SAME = 0;
 
     private final String genre;
 
@@ -68,7 +69,8 @@ public class Author extends Person
         {
             throw new IllegalArgumentException("Genre cannot be null or blank");
         }
-        if (genre.length() > GENRE_MAX_CHAR_LIMIT)
+
+        if(genre.length() > GENRE_MAX_CHAR_LIMIT)
         {
             throw new IllegalArgumentException("Genre cannot be longer than " +
                     GENRE_MAX_CHAR_LIMIT);
@@ -112,16 +114,14 @@ public class Author extends Person
         final int compare;
         compare = this.compareTo(otherAuthor);
 
-        if (compare == 0)
+        if (compare == SAME)
         {
             System.out.println("Both authors are same age in years");
         }
-
-        else if (compare > 0)
+        else if (compare > SAME)
         {
             System.out.printf("%s is older \n", this.getName());
         }
-
         else
         {
             System.out.printf("%s is older \n", otherAuthor.getName());

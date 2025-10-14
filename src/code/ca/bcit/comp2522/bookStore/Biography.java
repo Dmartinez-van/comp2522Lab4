@@ -44,10 +44,12 @@ public class Biography extends Book
         {
             return false;
         }
+
         if (!(o.getClass().equals(this.getClass())))
         {
             return false;
         }
+
         final Biography that;
         that = (Biography) o;
 

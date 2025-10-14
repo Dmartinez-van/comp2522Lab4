@@ -14,6 +14,7 @@ public class Person implements Printable,
                                Comparable<Person>
 {
     private static final Date DEFAULT_DEATH_DATE = null;
+    private static final int  SAME = 0;
 
     private final Date birthDate;
     private final Date deathDate;
@@ -145,7 +146,7 @@ public class Person implements Printable,
                                          that.birthDate.getYear());
 
         // If objects differ on year, return the result
-        if (yearComparison != 0)
+        if (yearComparison != SAME)
         {
             return yearComparison;
         }
@@ -154,7 +155,7 @@ public class Person implements Printable,
                                           that.birthDate.getMonth());
 
         // If objects differ on month, return the result
-        if (monthComparison != 0)
+        if (monthComparison != SAME)
         {
             return monthComparison;
         }
